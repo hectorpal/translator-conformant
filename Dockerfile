@@ -38,9 +38,8 @@ RUN apt-get update \
         zlib1g-dev
 
 #  && rm -rf /var/lib/apt/lists/*
-
 # Not sure I need libc6-i386
-# g*-multilib seems an overkill
+# g*-multilib is an overkill but will be useful for compiling
 
 WORKDIR /mnt
 

@@ -105,8 +105,8 @@ INCOMPLETE, polynomic.
 Ktm with merge for each L, models of clauses relevant to L: C_I(L)
 COMPLETE, sometimes polynomic.
 
-==> s0
-Ktm with merge for each L, models of Initial situation.
+==> fs0
+K_s0: Ktm with merge for each L, models of Initial situation.
 COMPLETE, always exponential.
 
 ==> k0

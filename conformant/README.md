@@ -15,32 +15,37 @@ Set var `TRANSLATOR_HOME` to the `translator` directory:
 export TRANSLATOR_HOME=/mnt/conformant/translator
 ```
 
-- For running t0, classical-based translation, use `./translator-t0`
-- Most other configurations are available through `./translator-something`
-- You may want to call `./translator` directly
+- `translator-t0`: t0, classical-based translation.
+- `translator-fs0`: Force K_{s0}, no optimization.
+- `translator-sat`: dDNNF-based + SAT. Parallel plan.
+- `translator-sat-serial`: dDNNF-based + SAT. Serial plan.
+- `translator-sat`: dDNNF-based + search based on model counting.
+- `translator-satplan`: A naive SATPLAN for classical planning. Parallel plan.
+- `translator-satplan-serial`: A naive SATPLAN for classical planning. Serial plan.
+- `./translator`: additional options.
 
 ## Test it
 
-1. Test in a directory with PDDLs, for example
+Test in a directory with PDDLs, for example
 
 ```
-cd conformant/benchmarks/ipc5/coins
-$TRANSLATOR_HOME/translator-t0 domain.pddl p02.pddl
+cd /mnt/conformant/test
+$TRANSLATOR_HOME/translator-t0 d.pddl p.pddl
 ```
 
 For verifying plan (using IPC-5 verifier)
 
 ```
-$TRANSLATOR_HOME/translator-t0 -c domain.pddl p02.pddl
+$TRANSLATOR_HOME/translator-t0 -c d.pddl p.pddl
 ```
 
 For running again (overwriting result logs)
 
 ```
-$TRANSLATOR_HOME/translator-t0 -f -c domain.pddl p02.pddl
+$TRANSLATOR_HOME/translator-t0 -f -c d.pddl p.pddl
 ```
 
-## MNotes
+## Notes
 
 - Requires: python 2.x
 
@@ -48,7 +53,7 @@ $TRANSLATOR_HOME/translator-t0 -f -c domain.pddl p02.pddl
 
 - It assumes a maximum of 2.1 Gb of RAM and 1Mb of stack. These limits can be changed in $TRANSLATOR_HOME/translator
 
-- It makes use of thid-part research software. Please, download them of their original site if you want to do something else than running this planner. COPYRIGHT are to their respective owners.
+- It makes use of thid-party research software. Please, download them of their original site if you want to do something else than running this planner. COPYRIGHT are to their respective owners.
 
 - FF is a classical planner. <http://members.deri.at/~joergh/ff.html> FF has been modified to accept bigger PDDLs
 
