@@ -1,2 +1,3 @@
 *.pyc
-**/*.pyc
+new-d.pddl
+new-p.pddl

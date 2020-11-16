@@ -1,26 +1,30 @@
 # TRANSLATOR: a family of Conformant Planners
 
-CONTENT:
+## Content
 
-- benchmarks: set of benchmarks
-- generators: for some benchmarks
-- docs: relevant papers
-- translator: the planner
+- `benchmarks`: set of benchmarks
+- `generators`: for some benchmarks
+- `docs`: relevant papers
+- `translator`: the planner
 
-For running t0, classical-based translation, use `./translator-t0`. Most other configurations are available through `./translator-something` You may want to call `./translator` directly.
+## Usage
 
-USAGE:
-
-1. Set var `TRANSLATOR_HOME` to the `translator` directory, for example:
+Set var `TRANSLATOR_HOME` to the `translator` directory:
 
 ```
-export TRANSLATOR_HOME=/home/hlp/translator/translator
+export TRANSLATOR_HOME=/mnt/conformant/translator
 ```
 
-1. Test in a directory with pddls, for example
+- For running t0, classical-based translation, use `./translator-t0`
+- Most other configurations are available through `./translator-something`
+- You may want to call `./translator` directly
+
+## Test it
+
+1. Test in a directory with PDDLs, for example
 
 ```
-cd translator/benchmarks/ipc5/coins
+cd conformant/benchmarks/ipc5/coins
 $TRANSLATOR_HOME/translator-t0 domain.pddl p02.pddl
 ```
 
@@ -36,9 +40,9 @@ For running again (overwriting result logs)
 $TRANSLATOR_HOME/translator-t0 -f -c domain.pddl p02.pddl
 ```
 
-NOTES:
+## MNotes
 
-- Requires: python 2.5
+- Requires: python 2.x
 
 - It corresponds to a total reimplementation using OCaml. Times vary respect to IPC5's and IPC6's. It now have some support for non-determinism, and syntactical variations introduced in IPC6. This version was used for the experiments reported in JAIR 2009.
 
@@ -57,6 +61,4 @@ NOTES:
 
 Please, let me know any problem or suggestion.
 
-- Hector Palacios, hectorpal@gmail.com, <https://www.hectorpalacios.net>
-
-May 2009
+Hector Palacios, hectorpal@gmail.com, <https://www.hectorpalacios.net>
