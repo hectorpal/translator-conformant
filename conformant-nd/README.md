@@ -1,4 +1,8 @@
-For running k1,k0 of Albore et al, ECAI 2010:
+# First
+
+Build the Docker image as described in `../README.md`
+
+# For running k1,k0 of Albore et al, ECAI 2010:
 
 ```
 . .env # for setting variables $TRANSLATOR_HOME and $LAMA
